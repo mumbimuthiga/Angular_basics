@@ -15,6 +15,7 @@ export class ServersComponent implements OnInit {
   //Property Binding
   allowNewServer=false;
   serverCreationStatus="No server was created";
+  serverName="";
   constructor(){
     setTimeout(()=>{
       this.allowNewServer=true;
@@ -25,6 +26,11 @@ export class ServersComponent implements OnInit {
   //Event Binding
   onCreateServer(){
     this.serverCreationStatus="Server was created";
+  }
+  onUpdateServerName(event:Event){
+    this.serverName=(<HTMLInputElement>event.target).value;
+    //console.log(event);
+
   }
   ngOnInit(): void {
     
